@@ -5,10 +5,12 @@
 #include "version.h"
 #include "ergodox_ez.h"
 
+/*
 #define RGBLIGHT_COLOR_LAYER_0 0xFF, 0x40, 0x00
 #define RGBLIGHT_COLOR_LAYER_1 0x00, 0x00, 0xFF
 #define RGBLIGHT_COLOR_LAYER_2 0xFF, 0x00, 0x00
 #define RGBLIGHT_COLOR_LAYER_3 0x00, 0xFF, 0x00
+*/
 // #define RGBLIGHT_COLOR_LAYER_4 0xFF, 0xFF, 0x00
 // #define RGBLIGHT_COLOR_LAYER_5 0x00, 0xFF, 0xFF
 // #define RGBLIGHT_COLOR_LAYER_6 0xFF, 0x00, 0xFF
@@ -326,8 +328,52 @@ DEF_COMBO(NAV, 06, R7, R8);
 #define FCT_RS MT(MOD_LSFT, KC_MS_BTN2)
 #define FCT_RE MT(MOD_LGUI, KC_MS_BTN1)
 
+// We want HOLD_ON_OTHER_KEY_PRESS for all combos, but not for the single-finger CTRL and ALT mod-taps:
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case PUQ_LP:
+        case PUQ_RP:
+        case PUQ_LA:
+        case PUQ_RA:
+        case PUQ_LB:
+        case PUQ_RB:
+            return false;
+        default:
+            return true;
+    }
+}
+
+uint8_t color_wheel;
+uint16_t energy;
+
+// Runs just one time when the keyboard initializes.
+void keyboard_post_init_user(void) {
+    color_wheel = 0;
+    energy = 256;
+#ifdef RGBLIGHT_COLOR_LAYER_0
+    rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
+#endif
+};
+
+// Input a value 0 to 255 to get a color value.
+// The colors are a transition r - g - b - back to r.
+void wheel( uint8_t wheel_pos ) {
+  wheel_pos = 255 - wheel_pos;
+
+  if ( wheel_pos < 85 ) {
+    rgblight_setrgb( 255 - wheel_pos * 3, 0, wheel_pos * 3 );
+  } else if( wheel_pos < 170 ) {
+    wheel_pos -= 85;
+    rgblight_setrgb( 0, wheel_pos * 3, 255 - wheel_pos * 3 );
+  } else {
+    wheel_pos -= 170;
+    rgblight_setrgb( wheel_pos * 3, 255 - wheel_pos * 3, 0 );
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
+        energy += 100;
         switch (keycode) {
             case VRSN:
                 SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
@@ -346,27 +392,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// We want HOLD_ON_OTHER_KEY_PRESS for all combos, but not for the single-finger CTRL and ALT mod-taps:
-bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case PUQ_LP:
-        case PUQ_RP:
-        case PUQ_LA:
-        case PUQ_RA:
-        case PUQ_LB:
-        case PUQ_RB:
-            return false;
-        default:
-            return true;
+void matrix_scan_user(void) {
+    if (energy > 0) {
+        wheel(color_wheel);
+        color_wheel = (color_wheel + 1) % 256;
+        energy -= 1;
     }
 }
-
-// Runs just one time when the keyboard initializes.
-void keyboard_post_init_user(void) {
-#ifdef RGBLIGHT_COLOR_LAYER_0
-    rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
-#endif
-};
 
 // Runs whenever there is a layer state change.
 layer_state_t layer_state_set_user(layer_state_t state) {
