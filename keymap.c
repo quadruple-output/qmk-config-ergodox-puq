@@ -113,34 +113,48 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQ_RS MT(MOD_LSFT, KC_SPACE)
 #define PUQ_RE MT(MOD_LGUI, KC_ENTER)
 
+#define PUQL12 DE_Z
+#define PUQL23 DE_J
+#define PUQL45 MO(NAV)
+#define PUQL46 OSL(FCT)
+#define PUQL56 MO(SYM)
+#define PUQL78 DE_COMM
+#define PUQL89 KC_DELETE
+#define PUQR12 DE_X
+#define PUQR23 DE_K
+#define PUQR45 PUQL56
+#define PUQR46 PUQL46
+#define PUQR56 PUQL45
+#define PUQR78 KC_BACKSPACE
+#define PUQR89 DE_DOT
 DEF_COMBO(PUQ, 01, L1, L2);
-#define COMBO_PUQ_01_ACTION DE_Z
+#define COMBO_PUQ_01_ACTION PUQL12
 DEF_COMBO(PUQ, 02, L2, L3);
-#define COMBO_PUQ_02_ACTION DE_J
+#define COMBO_PUQ_02_ACTION PUQL23
 DEF_COMBO(PUQ, 03, L4, L5);
-#define COMBO_PUQ_03_ACTION MO(NAV)
+#define COMBO_PUQ_03_ACTION PUQL45
 DEF_COMBO(PUQ, 04, L4, L6);
-#define COMBO_PUQ_04_ACTION OSL(FCT)
+#define COMBO_PUQ_04_ACTION PUQL46
 DEF_COMBO(PUQ, 05, L5, L6);
-#define COMBO_PUQ_05_ACTION MO(SYM)
+#define COMBO_PUQ_05_ACTION PUQL56
 DEF_COMBO(PUQ, 06, L7, L8);
-#define COMBO_PUQ_06_ACTION DE_COMM
+#define COMBO_PUQ_06_ACTION PUQL78
 DEF_COMBO(PUQ, 07, L8, L9);
-#define COMBO_PUQ_07_ACTION KC_DELETE
+#define COMBO_PUQ_07_ACTION PUQL89
 DEF_COMBO(PUQ, 08, R1, R2);
-#define COMBO_PUQ_08_ACTION DE_X
+#define COMBO_PUQ_08_ACTION PUQR12
 DEF_COMBO(PUQ, 09, R2, R3);
-#define COMBO_PUQ_09_ACTION DE_K
+#define COMBO_PUQ_09_ACTION PUQR23
 DEF_COMBO(PUQ, 10, R4, R5);
-#define COMBO_PUQ_10_ACTION MO(SYM)
+#define COMBO_PUQ_10_ACTION PUQR45
 DEF_COMBO(PUQ, 11, R4, R6);
-#define COMBO_PUQ_11_ACTION OSL(FCT)
+#define COMBO_PUQ_11_ACTION PUQR46
 DEF_COMBO(PUQ, 12, R5, R6);
-#define COMBO_PUQ_12_ACTION MO(NAV)
+#define COMBO_PUQ_12_ACTION PUQR56
 DEF_COMBO(PUQ, 13, R7, R8);
-#define COMBO_PUQ_13_ACTION KC_BACKSPACE
+#define COMBO_PUQ_13_ACTION PUQR78
 DEF_COMBO(PUQ, 14, R8, R9);
-#define COMBO_PUQ_14_ACTION DE_DOT
+#define COMBO_PUQ_14_ACTION PUQR89
 
 const key_override_t shift_comma_is_dash = ko_make_with_layers_and_negmods(
         MOD_MASK_SHIFT,
@@ -483,9 +497,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [PUQ] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, __xx__,     __xx__, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, __xx__, __xx__,
-      __xx__, __xx__, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, __xx__, __xx__,
-      __xx__, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, __xx__, __xx__,     __xx__, __xx__, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, __xx__,
-      __xx__, __xx__, __xx__, __xx__, __xx__,                                     __xx__, __xx__, __xx__, __xx__, __xx__,
+      __xx__, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, __xx__,
+      __xx__, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, __xx__,
+      __xx__, PUQL12, __xx__, __xx__, KC_SPC,                                     KC_SPC, __xx__, __xx__, PUQR23, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
                                       PUQ_LS, PUQ_LE, __xx__,     __xx__, PUQ_RE, PUQ_RS
@@ -496,7 +510,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, SYM_L7, SYM_L8, SYM_L9, SYM_LA, __xx__,     __xx__, SYM_RA, SYM_R7, SYM_R8, SYM_R9, __xx__, __xx__,
       __xx__, __xx__, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, __xx__,
       __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, __xx__,
-      __xx__, __xx__, __xx__, __xx__, __xx__,                                     __xx__, __xx__, __xx__, __xx__, __xx__,
+      __xx__, __xx__, __xx__, __xx__, KC_SPC,                                     KC_SPC, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
                                       SYM_LS, SYM_LE, __xx__,     __xx__, SYM_RE, SYM_RS
@@ -507,7 +521,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, NAV_L7, NAV_L8, NAV_L9, NAV_LA, __xx__,     __xx__, NAV_RA, NAV_R7, NAV_R8, NAV_R9, __xx__, __xx__,
       __xx__, __xx__, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, __xx__,
       __xx__, NAV_LP, NAV_L1, NAV_L2, NAV_L3, __xx__, __xx__,     __xx__, __xx__, NAV_R1, NAV_R2, NAV_R3, NAV_RP, __xx__,
-      __xx__, __xx__, __xx__, __xx__, __xx__,                                     __xx__, __xx__, __xx__, __xx__, __xx__,
+      __xx__, __xx__, __xx__, __xx__, KC_SPC,                                     KC_SPC, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
                                       NAV_LS, NAV_LE, __xx__,     __xx__, NAV_RE, NAV_RS
@@ -518,7 +532,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, FCT_L7, FCT_L8, FCT_L9, FCT_LA, __xx__,     __xx__, FCT_RA, FCT_R7, FCT_R8, FCT_R9, __xx__, __xx__,
       __xx__, __xx__, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, __xx__, __xx__,
       __xx__, FCT_LP, FCT_L1, FCT_L2, FCT_L3, __xx__, __xx__,     __xx__, __xx__, FCT_R1, FCT_R2, FCT_R3, FCT_RP, __xx__,
-      __xx__, __xx__, __xx__, __xx__, __xx__,                                     __xx__, __xx__, __xx__, __xx__, __xx__,
+      __xx__, __xx__, __xx__, __xx__, KC_SPC,                                     KC_SPC, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
                                       FCT_LS, FCT_LE, __xx__,     __xx__, FCT_RE, FCT_RS
