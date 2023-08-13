@@ -279,18 +279,24 @@ DEF_COMBO(SYM, 03, R7, R8);
 #define NAV_RS MT(MOD_LSFT, KC_0)
 #define NAV_RE MT(MOD_LGUI, KC_ENTER)
 
+#define NAVL78 KC_BACKSPACE
+#define NAVL89 KC_DELETE
+#define NAVR12 KC_KP_DOT
+#define NAVR23 KC_KP_MINUS
+#define NAVR56 DE_EQL
+#define NAVR78 KC_BACKSPACE
 DEF_COMBO(NAV, 01, L7, L8);
-#define COMBO_NAV_01_ACTION KC_BACKSPACE
+#define COMBO_NAV_01_ACTION NAVL78
 DEF_COMBO(NAV, 02, L8, L9);
-#define COMBO_NAV_02_ACTION KC_DELETE
+#define COMBO_NAV_02_ACTION NAVL89
 DEF_COMBO(NAV, 03, R1, R2);
-#define COMBO_NAV_03_ACTION KC_KP_DOT
+#define COMBO_NAV_03_ACTION NAVR12
 DEF_COMBO(NAV, 04, R2, R3);
-#define COMBO_NAV_04_ACTION KC_KP_MINUS
+#define COMBO_NAV_04_ACTION NAVR23
 DEF_COMBO(NAV, 05, R5, R6);
-#define COMBO_NAV_05_ACTION DE_EQL
+#define COMBO_NAV_05_ACTION NAVR56
 DEF_COMBO(NAV, 06, R7, R8);
-#define COMBO_NAV_06_ACTION KC_BACKSPACE
+#define COMBO_NAV_06_ACTION NAVR78
 
 /* Layer FCT:
           ┌───────┬───────┬───────┐                           ┌───────┬───────┬───────┐
@@ -518,8 +524,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAV] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
-      __xx__, __xx__, NAV_L7, NAV_L8, NAV_L9, NAV_LA, __xx__,     __xx__, NAV_RA, NAV_R7, NAV_R8, NAV_R9, __xx__, __xx__,
-      __xx__, __xx__, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, __xx__,
+      __xx__, __xx__, NAV_L7, NAV_L8, NAV_L9, NAVL89, __xx__,     __xx__, NAV_RA, NAV_R7, NAV_R8, NAV_R9, __xx__, __xx__,
+      __xx__, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, __xx__,
       __xx__, NAV_LP, NAV_L1, NAV_L2, NAV_L3, __xx__, __xx__,     __xx__, __xx__, NAV_R1, NAV_R2, NAV_R3, NAV_RP, __xx__,
       __xx__, __xx__, __xx__, __xx__, NAV_LS,                                     NAV_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
