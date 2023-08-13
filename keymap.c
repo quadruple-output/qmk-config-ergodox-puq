@@ -551,6 +551,7 @@ DISABLE_SYM_SHIFT(03, DE_LCBR);
 DISABLE_SYM_SHIFT(04, DE_RCBR);
 DISABLE_SYM_SHIFT(05, DE_LBRC);
 DISABLE_SYM_SHIFT(06, DE_RBRC);
+DISABLE_SYM_SHIFT(07, DE_AT);
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_is_dash,
     &shift_dot_is_bullet,
@@ -581,6 +582,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &disable_sym_shift_04,
     &disable_sym_shift_05,
     &disable_sym_shift_06,
+    &disable_sym_shift_07,
     NULL // terminator
 };
 
@@ -604,7 +606,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, SYM_L7, SYM_L8, SYM_L9, SYM_LA, __xx__,     __xx__, SYM_RA, SYM_R7, SYM_R8, SYM_R9, __xx__, __xx__,
       __xx__, __xx__, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, __xx__,
-      __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, __xx__,
+      __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
       __xx__, __xx__, __xx__, __xx__, SYM_LS,                                     SYM_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
