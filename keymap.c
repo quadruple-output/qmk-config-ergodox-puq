@@ -40,6 +40,41 @@ enum layers {
 #define NAV_MASK (1 << NAV)
 #define FCT_MASK (1 << FCT)
 
+// Disable SHIFT for the SYM layer:
+// see https://docs.qmk.fm/#/feature_key_overrides?id=reference-for-key_override_t
+#define DISABLE_SYM_ALT(n, key) \
+const key_override_t disable_sym_alt_ ## n = {                               \
+    .trigger_mods    = MOD_BIT(KC_RIGHT_ALT) | MOD_BIT(KC_LEFT_ALT),     \
+    .layers          = SYM_MASK,                                         \
+    .suppressed_mods = MOD_BIT(KC_RIGHT_ALT) | MOD_BIT(KC_LEFT_ALT),     \
+    .options         = ko_option_one_mod,                                \
+    .trigger         = key,                                              \
+    .replacement     = key,                                              \
+    .enabled         = NULL                                              \
+}
+#define DISABLE_SYM_ALT_AND_SHIFT(n, key) \
+const key_override_t disable_sym_alt_and_shift ## n = {                      \
+    .trigger_mods    = MOD_BIT(KC_RIGHT_ALT) | MOD_BIT(KC_LEFT_ALT) |    \
+                       MOD_BIT(KC_RIGHT_SHIFT) | MOD_BIT(KC_LEFT_SHIFT), \
+    .layers          = SYM_MASK,                                         \
+    .suppressed_mods = MOD_BIT(KC_RIGHT_ALT) | MOD_BIT(KC_LEFT_ALT) |    \
+                       MOD_BIT(KC_RIGHT_SHIFT) | MOD_BIT(KC_LEFT_SHIFT), \
+    .options         = ko_option_one_mod,                                \
+    .trigger         = key,                                              \
+    .replacement     = key,                                              \
+    .enabled         = NULL                                              \
+}
+#define DISABLE_SYM_SHIFT(n, key) \
+const key_override_t disable_sym_shift_ ## n = {                             \
+    .trigger_mods    = MOD_BIT(KC_RIGHT_SHIFT) | MOD_BIT(KC_LEFT_SHIFT), \
+    .layers          = SYM_MASK,                                         \
+    .suppressed_mods = MOD_BIT(KC_RIGHT_SHIFT) | MOD_BIT(KC_LEFT_SHIFT), \
+    .options         = ko_option_one_mod,                                \
+    .trigger         = key,                                              \
+    .replacement     = key,                                              \
+    .enabled         = NULL                                              \
+}
+
 /* naming scheme for Key #defines:
        ┌────┬────┬────┐                     ┌────┬────┬────┐
        │ L7 │ L8 │ L9 ├────┐           ┌────┤ R7 │ R8 │ R9 │
@@ -489,9 +524,63 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 };
 
 // Key Overrides:
+DISABLE_SYM_ALT(01, DE_DLR);
+DISABLE_SYM_ALT(02, DE_SLSH);
+DISABLE_SYM_ALT(03, DE_AMPR);
+DISABLE_SYM_ALT(04, DE_ASTR);
+DISABLE_SYM_ALT(05, DE_GRV);
+DISABLE_SYM_ALT(06, DE_COLN);
+DISABLE_SYM_ALT(07, DE_PERC);
+DISABLE_SYM_ALT(08, DE_DQUO);
+DISABLE_SYM_ALT(09, DE_QUOT);
+DISABLE_SYM_ALT(10, DE_LPRN);
+DISABLE_SYM_ALT(11, DE_RPRN);
+DISABLE_SYM_ALT(12, DE_RABK);
+DISABLE_SYM_ALT(13, DE_EQL);
+DISABLE_SYM_ALT(14, DE_EXLM);
+DISABLE_SYM_ALT(15, DE_QUES);
+DISABLE_SYM_ALT(16, DE_SCLN);
+DISABLE_SYM_ALT_AND_SHIFT(01, DE_CIRC);
+DISABLE_SYM_ALT_AND_SHIFT(02, DE_HASH);
+DISABLE_SYM_ALT_AND_SHIFT(03, DE_MINS);
+DISABLE_SYM_ALT_AND_SHIFT(04, DE_LABK);
+DISABLE_SYM_ALT_AND_SHIFT(05, DE_PLUS);
+DISABLE_SYM_SHIFT(01, DE_PIPE);
+DISABLE_SYM_SHIFT(02, DE_TILD);
+DISABLE_SYM_SHIFT(03, DE_LCBR);
+DISABLE_SYM_SHIFT(04, DE_RCBR);
+DISABLE_SYM_SHIFT(05, DE_LBRC);
+DISABLE_SYM_SHIFT(06, DE_RBRC);
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_is_dash,
     &shift_dot_is_bullet,
+    &disable_sym_alt_01,
+    &disable_sym_alt_02,
+    &disable_sym_alt_03,
+    &disable_sym_alt_04,
+    &disable_sym_alt_05,
+    &disable_sym_alt_06,
+    &disable_sym_alt_07,
+    &disable_sym_alt_08,
+    &disable_sym_alt_09,
+    &disable_sym_alt_10,
+    &disable_sym_alt_11,
+    &disable_sym_alt_12,
+    &disable_sym_alt_13,
+    &disable_sym_alt_14,
+    &disable_sym_alt_15,
+    &disable_sym_alt_16,
+    &disable_sym_alt_and_shift01,
+    &disable_sym_alt_and_shift02,
+    &disable_sym_alt_and_shift03,
+    &disable_sym_alt_and_shift04,
+    &disable_sym_alt_and_shift05,
+    &disable_sym_shift_01,
+    &disable_sym_shift_02,
+    &disable_sym_shift_03,
+    &disable_sym_shift_04,
+    &disable_sym_shift_05,
+    &disable_sym_shift_06,
     NULL // terminator
 };
 
