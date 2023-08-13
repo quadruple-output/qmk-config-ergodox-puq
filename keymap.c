@@ -498,8 +498,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, __xx__,     __xx__, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, __xx__, __xx__,
       __xx__, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, __xx__,
-      __xx__, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, __xx__,
-      __xx__, PUQL12, __xx__, __xx__, PUQ_LS,                                     PUQ_RS, __xx__, __xx__, PUQR23, __xx__,
+      PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
+      __xx__, PUQL12, __xx__, PUQL45, PUQ_LS,                                     PUQ_RS, PUQR56, __xx__, PUQR23, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
                                       PUQ_LS, PUQ_LE, __xx__,     __xx__, PUQ_RE, PUQ_RS
