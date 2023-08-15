@@ -255,8 +255,9 @@ const key_override_t shift_dot_is_bullet = ko_make_with_layers_and_negmods(
 #define SYM_RS DE_SCLN
 #define SYM_RE DE_PLUS
 
+#define SYML78 DE_ELLP
 DEF_COMBO(SYM, 01, L7, L8);
-#define COMBO_SYM_01_ACTION DE_ELLP
+#define COMBO_SYM_01_ACTION SYML78
 DEF_COMBO(SYM, 02, L8, L9);
 #define COMBO_SYM_02_ACTION KC_DELETE
 DEF_COMBO(SYM, 03, R7, R8);
@@ -264,7 +265,7 @@ DEF_COMBO(SYM, 03, R7, R8);
 
 /* Layer NAV:
           ┌───────┬───────┬───────┐                           ┌───────┬───────┬───────┐
-          │   ○┈┈ ⌫ ┈┈◑┈┈ ⌦ ┈┈●   │                           │   ●┈┈ ⌫ ┈┈●   │       │
+          │   ○┈┈ ⌫ ┈┈◑┈┈ ⌦ ┈┈●   │                           │   ●┈┈ ⌫ ┈┈◐┈┈ . ┈┈○   │
           │   ⇞   │   ↑   │   ⇟   ├───────┐           ┌───────┤   7   │   8   │   9   │
           │       │       │       │       │           │       │       │       │       │
           ├───────┼───────┼───────┤       │           │   *   ├───────┼───────┼───────┤
@@ -320,6 +321,7 @@ DEF_COMBO(SYM, 03, R7, R8);
 #define NAVR23 KC_KP_MINUS
 #define NAVR56 DE_EQL
 #define NAVR78 KC_BACKSPACE
+#define NAVR89 DE_DOT
 DEF_COMBO(NAV, 01, L7, L8);
 #define COMBO_NAV_01_ACTION NAVL78
 DEF_COMBO(NAV, 02, L8, L9);
@@ -332,6 +334,8 @@ DEF_COMBO(NAV, 05, R5, R6);
 #define COMBO_NAV_05_ACTION NAVR56
 DEF_COMBO(NAV, 06, R7, R8);
 #define COMBO_NAV_06_ACTION NAVR78
+DEF_COMBO(NAV, 07, R8, R9);
+#define COMBO_NAV_07_ACTION NAVR89
 
 /* Layer FCT:
           ┌───────┬───────┬───────┐                           ┌───────┬───────┬───────┐
@@ -605,7 +609,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [SYM] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, SYM_L7, SYM_L8, SYM_L9, SYM_LA, __xx__,     __xx__, SYM_RA, SYM_R7, SYM_R8, SYM_R9, __xx__, __xx__,
-      __xx__, __xx__, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, __xx__,
+      __xx__, SYML78, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, __xx__,
       __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
       __xx__, __xx__, __xx__, __xx__, SYM_LS,                                     SYM_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
@@ -665,5 +669,6 @@ combo_t key_combos[] = {
     COMBO(COMBO_NAV_04, COMBO_NAV_04_ACTION),
     COMBO(COMBO_NAV_05, COMBO_NAV_05_ACTION),
     COMBO(COMBO_NAV_06, COMBO_NAV_06_ACTION),
+    COMBO(COMBO_NAV_07, COMBO_NAV_07_ACTION),
 };
 
