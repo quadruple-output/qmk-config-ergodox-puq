@@ -527,7 +527,17 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 };
 
+// Homerow-bindings for scrolling and clicking:
+#define HR_SCL C(A(G(DE_G)))
+#define HR_CLK C(A(G(DE_Q)))
+
 // Key Overrides:
+const key_override_t shift_hr_clk = ko_make_with_layers(
+        MOD_MASK_SHIFT,
+        HR_CLK,
+        S(HR_SCL), // simply shifting HR_CLK does not work, due to homerow restrictions
+        PUQ_MASK   // only on PUQ layer
+      );
 DISABLE_SYM_ALT(01, DE_DLR);
 DISABLE_SYM_ALT(02, DE_SLSH);
 DISABLE_SYM_ALT(03, DE_AMPR);
@@ -558,6 +568,7 @@ DISABLE_SYM_SHIFT(06, DE_RBRC);
 DISABLE_SYM_SHIFT(07, DE_AT);
 const key_override_t **key_overrides = (const key_override_t *[]){
     &shift_comma_is_dash,
+    &shift_hr_clk,
     &shift_dot_is_bullet,
     &disable_sym_alt_01,
     &disable_sym_alt_02,
@@ -596,7 +607,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [PUQ] = LAYOUT_ergodox_pretty(
-      __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
+      __xx__, __xx__, __xx__, HR_SCL, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, HR_CLK, __xx__, __xx__, __xx__,
       __xx__, __xx__, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, __xx__,     __xx__, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, __xx__, __xx__,
       __xx__, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, __xx__,
       PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
