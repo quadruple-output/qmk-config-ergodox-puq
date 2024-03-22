@@ -18,7 +18,8 @@
 
 // Utilities for defining combos:
 #define LAYER_COMBO(n, layer, a, b) \
-    const uint16_t PROGMEM COMBO_ ## layer ## _ ## n[] = {layer ## _ ## a, layer ## _ ## b, COMBO_END}
+    const uint16_t PROGMEM COMBO_ ## layer ## _ ## n[] = \
+        {layer ## _ ## a, layer ## _ ## b, COMBO_END}
 #define DEF_COMBO(layer, n, key_a, key_b) LAYER_COMBO(n, layer, key_a, key_b)
 
 enum custom_keycodes {
@@ -101,8 +102,8 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
          SHFT).
 
           ┌───────┬───────┬───────┐                           ┌───────┬───────┬───────┐
-          │   ●┈┈ , ┈┈◐┈┈ ⌦ ┈┈○   │                           │   ●┈┈ ⌫ ┈┈◐┈┈ . ┈┈○   │
-          │   M   │   L   │   C   ├───────┐           ┌───────┤   F   │   ⎄   │   U   │
+          │   ●┈┈ F ┈┈◐┈┈ ⌦ ┈┈○   │                           │   ●┈┈ ⌫ ┈┈◐┈┈ P ┈┈○   │
+          │   M   │   L   │   C   ├───────┐           ┌───────┤   ,   │   ⎄   │   U   │
           │       │       │       │       │           │       │       │       │       │
           ├───────┼───────┼───────┤   G   │           │   Q   ├───────┼───────┼───────┤
           │   ●┈┈NAV┈┈◐┈┈SYM┈┈○   │ ⌥ ⎈ ⌘ │           │ ⌥ ⎈ ⌘ │   ●┈┈SYM┈┈◐┈┈NAV┈┈○   │
@@ -110,7 +111,7 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
           │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │       │           │       │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │
   ┌───────┼───────┼───────┼───────┤   D   │           │   O   ├───────┼───────┼───────┼───────┐
   │       │   ●┈┈ Z ┈┈◐┈┈ J ┈┈○   │ ⎈     │           │ ⎈     │   ●┈┈ X ┈┈◐┈┈ K ┈┈○   │       │
-  │   S   │   B   │   W   │   V   ├───────┘           └───────┤   _   │   P   │   Y   │   H   │
+  │   S   │   B   │   W   │   V   ├───────┘           └───────┤   _   │   .   │   Y   │   H   │
   │ ⌥     │       │       │       │                           │       │       │       │ ⌥     │
   └───────┴───────┴───────┴────┬──┴────┬───────┐ ┌───────┬────┴──┬────┴───────┴───────┴───────┘
                                │       │       │ │       │       │
@@ -118,7 +119,6 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
                                │ ⇧     │ ⌘     │ │ ⌘     │ ⇧     │
                                └───────┴───────┘ └───────┴───────┘
 */
-
 #define PUQ_LP MT(MOD_LALT, DE_S)
 #define PUQ_L1 DE_B
 #define PUQ_L2 DE_W
@@ -135,12 +135,14 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQ_LE MT(MOD_LGUI, KC_ESCAPE)
 #define PUQ_RP MT(MOD_LALT, DE_H)
 #define PUQ_R1 DE_UNDS
-#define PUQ_R2 DE_P
+// #define PUQ_R2 DE_P
+#define PUQ_R2 DE_DOT
 #define PUQ_R3 DE_Y
 #define PUQ_R4 DE_A
 #define PUQ_R5 DE_E
 #define PUQ_R6 DE_I
-#define PUQ_R7 DE_F
+// #define PUQ_R7 DE_F
+#define PUQ_R7 DE_COMM
 #define PUQ_R8 C(KC_F13) // quick-compose key. add SHIFT for full compose key
 #define PUQ_R9 DE_U
 #define PUQ_RA MT(MOD_LCTL|MOD_LALT|MOD_LGUI, DE_Q)
@@ -153,7 +155,8 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQL45 MO(NAV)
 #define PUQL46 OSL(FCT)
 #define PUQL56 MO(SYM)
-#define PUQL78 DE_COMM
+// #define PUQL78 DE_COMM
+#define PUQL78 DE_F
 #define PUQL89 KC_DELETE
 #define PUQR12 DE_X
 #define PUQR23 DE_K
@@ -161,7 +164,8 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQR46 PUQL46
 #define PUQR56 PUQL45
 #define PUQR78 KC_BACKSPACE
-#define PUQR89 DE_DOT
+// #define PUQR89 DE_DOT
+#define PUQR89 DE_P
 DEF_COMBO(PUQ, 01, L1, L2);
 #define COMBO_PUQ_01_ACTION PUQL12
 DEF_COMBO(PUQ, 02, L2, L3);
