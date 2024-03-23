@@ -391,7 +391,10 @@ DEF_COMBO(NAV, 07, R8, R9);
 #define FCT_RS MT(MOD_LSFT, KC_MS_BTN2)
 #define FCT_RE MT(MOD_LGUI, KC_MS_BTN1)
 
-// We want HOLD_ON_OTHER_KEY_PRESS for all combos, but not for the single-finger CTRL and ALT mod-taps:
+// We want HOLD_ON_OTHER_KEY_PRESS for all combos, but not for the single-finger CTRL and ALT
+// mod-taps.
+// We also turn it off for the command key, because it is so close to space that the two keys are
+// often hit together by accident.
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case PUQ_LP:
@@ -400,6 +403,8 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
         case PUQ_RA:
         case PUQ_LB:
         case PUQ_RB:
+        case PUQ_LE:
+        case PUQ_RE:
             return false;
         default:
             return true;
