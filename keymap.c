@@ -299,16 +299,17 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
           │   N   │   R   │   T   ├───────┤           ├───────┤   A   │   E   │   I   │
           │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │       │           │       │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │
   ┌───────┼───────┼───────┼───────┤   D   │           │   O   ├───────┼───────┼───────┼───────┐
-  │       │   ●┈┈ Z ┈┈◐┈┈ J ┈┈○   │ ⎈     │           │ ⎈     │   ●┈┈ X ┈┈◐┈┈ K ┈┈○   │       │
+  │       │   ●┈┈ Z ┈┈◐┈┈ J ┈┈○   │       │           │       │   ●┈┈ X ┈┈◐┈┈ K ┈┈○   │       │
   │   S   │   B   │   W   │   V   ├───────┘           └───────┤   _   │   .   │   Y   │   H   │
-  │ ⌥     │       │       │       │                           │       │       │       │ ⌥     │
+  │       │       │       │       │                           │       │       │       │       │
   └───────┴───────┴───────┴────┬──┴────┬───────┐ ┌───────┬────┴──┬────┴───────┴───────┴───────┘
                                │       │       │ │       │       │
                                │   ␣   │  Esc  │ │   ⏎   │   ␣   │
                                │ ⇧     │ ⌘     │ │ ⌘     │ ⇧     │
                                └───────┴───────┘ └───────┴───────┘
 */
-#define PUQ_LP MT(MOD_LALT, DE_S)
+// #define PUQ_LP MT(MOD_LALT, DE_S)
+#define PUQ_LP DE_S
 #define PUQ_L1 DE_B
 #define PUQ_L2 DE_W
 #define PUQ_L3 DE_V
@@ -319,10 +320,12 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQ_L8 DE_L
 #define PUQ_L9 DE_C
 #define PUQ_LA MT(MOD_LCTL|MOD_LALT|MOD_LGUI, DE_G)
-#define PUQ_LB MT(MOD_LCTL, DE_D)
+// #define PUQ_LB MT(MOD_LCTL, DE_D)
+#define PUQ_LB DE_D
 #define PUQ_LS MT(MOD_LSFT, KC_SPACE)
 #define PUQ_LE MT(MOD_LGUI, KC_ESCAPE)
-#define PUQ_RP MT(MOD_LALT, DE_H)
+// #define PUQ_RP MT(MOD_LALT, DE_H)
+#define PUQ_RP DE_H
 #define PUQ_R1 DE_UNDS
 // #define PUQ_R2 DE_P
 #define PUQ_R2 DE_DOT
@@ -335,7 +338,8 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQ_R8 C(KC_F13) // quick-compose key. add SHIFT for full compose key
 #define PUQ_R9 DE_U
 #define PUQ_RA MT(MOD_LCTL|MOD_LALT|MOD_LGUI, DE_Q)
-#define PUQ_RB MT(MOD_LCTL, DE_O)
+// #define PUQ_RB MT(MOD_LCTL, DE_O)
+#define PUQ_RB DE_O
 #define PUQ_RS MT(MOD_LSFT, KC_SPACE)
 #define PUQ_RE MT(MOD_LGUI, KC_ENTER)
 
@@ -466,9 +470,9 @@ DEF_COMBO(SYM, 03, R7, R8);
           │   ←   │   ↓   │   →   ├───────┤           ├───────┤   4   │   5   │   6   │
           │       │       │       │       │           │       │       │       │       │
   ┌───────┼───────┼───────┼───────┤   ↠   │           │   /   ├───────┼───────┼───────┼───────┐
-  │       │       │       │       │       │           │ ⎈     │   ●┈┈ . ┈┈◐┈┈ - ┈┈○   │       │
+  │       │       │       │       │       │           │       │   ●┈┈ . ┈┈◐┈┈ - ┈┈○   │       │
   │   ↞   │   ⇥   │   ⎀   │   ⏎   ├───────┘           └───────┤   1   │   2   │   3   │   +   │
-  │       │       │       │       │                           │       │       │       │ ⌥     │
+  │       │       │       │       │                           │       │       │       │       │
   └───────┴───────┴───────┴────┬──┴────┬───────┐ ┌───────┬────┴──┬────┴───────┴───────┴───────┘
                                │       │       │ │       │       │
                                │   ␣   │  Esc  │ │   ⏎   │   0   │
@@ -490,7 +494,8 @@ DEF_COMBO(SYM, 03, R7, R8);
 #define NAV_LB G(KC_RIGHT)
 #define NAV_LS MT(MOD_LSFT, KC_SPACE)
 #define NAV_LE MT(MOD_LGUI, KC_ESCAPE)
-#define NAV_RP MT(MOD_LALT, KC_KP_PLUS)
+// #define NAV_RP MT(MOD_LALT, KC_KP_PLUS)
+#define NAV_RP KC_KP_PLUS
 // We don't use the keypad numbers (KC_KP_...) here, because the normal number keys are more
 // universal. Some apps may have special semantics for keypad numbers, and bindings in
 // DefaultKeyBindings.dict are based on the normal numbers, as well.
@@ -504,7 +509,8 @@ DEF_COMBO(SYM, 03, R7, R8);
 #define NAV_R8 KC_8
 #define NAV_R9 KC_9
 #define NAV_RA KC_KP_ASTERISK
-#define NAV_RB MT(MOD_LCTL, KC_KP_SLASH)
+// #define NAV_RB MT(MOD_LCTL, KC_KP_SLASH)
+#define NAV_RB KC_KP_SLASH
 #define NAV_RS MT(MOD_LSFT, KC_0)
 #define NAV_RE MT(MOD_LGUI, KC_ENTER)
 
@@ -540,9 +546,9 @@ DEF_COMBO(NAV, 07, R8, R9);
           │   F4  │   F5  │   F6  ├───────┤           ├───────┤   ⏮   │   ⏯   │   ⏭   │
           │       │       │       │       │           │       │       │       │       │
   ┌───────┼───────┼───────┼───────┤  F11  │           │       ├───────┼───────┼───────┼───────┐
-  │       │       │       │       │ ⎈     │           │ ⎈     │       │       │       │       │
+  │       │       │       │       │       │           │       │       │       │       │       │
   │  F12  │   F1  │   F2  │   F3  ├───────┘           └───────┤   🔅  │  F20  │   🔆  │   ☰   │
-  │ ⌥     │       │       │       │                           │       │       │       │ ⌥     │
+  │       │       │       │       │                           │       │       │       │       │
   └───────┴───────┴───────┴────┬──┴────┬───────┐ ┌───────┬────┴──┬────┴───────┴───────┴───────┘
                                │       │       │ │       │       │
                                │  L-🐭 │  R-🐭 │ │  L-🐭 │  R-🐭 │
@@ -550,7 +556,8 @@ DEF_COMBO(NAV, 07, R8, R9);
                                └───────┴───────┘ └───────┴───────┘
 */
 
-#define FCT_LP MT(MOD_LALT, KC_F12)
+// #define FCT_LP MT(MOD_LALT, KC_F12)
+#define FCT_LP KC_F12
 #define FCT_L1 KC_F1
 #define FCT_L2 KC_F2
 #define FCT_L3 KC_F3
@@ -561,10 +568,12 @@ DEF_COMBO(NAV, 07, R8, R9);
 #define FCT_L8 KC_F8
 #define FCT_L9 KC_F9
 #define FCT_LA MT(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F10)
-#define FCT_LB MT(MOD_LCTL, KC_F11)
+// #define FCT_LB MT(MOD_LCTL, KC_F11)
+#define FCT_LB KC_F11
 #define FCT_LS MT(MOD_LSFT, KC_MS_BTN1)
 #define FCT_LE MT(MOD_LGUI, KC_MS_BTN2)
-#define FCT_RP MT(MOD_LALT, MACRO_MENU)
+// #define FCT_RP MT(MOD_LALT, MACRO_MENU)
+#define FCT_RP MACRO_MENU
 #define MACRO_MENU_KEY FCT_RP
 #define FCT_R1 KC_BRIGHTNESS_DOWN
 #define FCT_R2 KC_F20 // mapped to `mic key` in BetterTouchTool
@@ -576,7 +585,8 @@ DEF_COMBO(NAV, 07, R8, R9);
 #define FCT_R8 KC_AUDIO_MUTE
 #define FCT_R9 KC_AUDIO_VOL_UP
 #define FCT_RA C(A(KC_LGUI))
-#define FCT_RB KC_LCTL
+// #define FCT_RB KC_LCTL
+#define FCT_RB XXXXXXX
 #define FCT_RS MT(MOD_LSFT, KC_MS_BTN2)
 #define FCT_RE MT(MOD_LGUI, KC_MS_BTN1)
 
@@ -804,45 +814,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [PUQ] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, HR_SCL, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, HR_CLK, __xx__, __xx__, __xx__,
       __xx__, __xx__, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, __xx__,     __xx__, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, __xx__, __xx__,
-      __xx__, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, __xx__,
+     KC_LCTL, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, KC_RCTL,
       PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
       __xx__, PUQL12, __xx__, PUQL45, PUQ_LS,                                     PUQ_RS, PUQR56, __xx__, PUQR23, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
-                                      PUQ_LS, PUQ_LE, __xx__,     __xx__, PUQ_RE, PUQ_RS
+                                     PUQ_LS, PUQ_LE, KC_LALT,     KC_RALT, PUQ_RE, PUQ_RS
     ),
 
     [SYM] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, SYM_L7, SYM_L8, SYM_L9, SYM_LA, __xx__,     __xx__, SYM_RA, SYM_R7, SYM_R8, SYM_R9, __xx__, __xx__,
-      __xx__, SYML78, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, __xx__,
+     KC_LCTL, SYML78, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, KC_RCTL,
       __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
       __xx__, __xx__, __xx__, __xx__, SYM_LS,                                     SYM_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
-                                      SYM_LS, SYM_LE, __xx__,     __xx__, SYM_RE, SYM_RS
+                                     SYM_LS, SYM_LE, KC_LALT,     KC_RALT, SYM_RE, SYM_RS
     ),
 
     [NAV] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, NAV_L7, NAV_L8, NAV_L9, NAVL89, __xx__,     __xx__, NAV_RA, NAV_R7, NAV_R8, NAV_R9, __xx__, __xx__,
-      __xx__, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, __xx__,
+     KC_LCTL, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, KC_RCTL,
       __xx__, NAV_LP, NAV_L1, NAV_L2, NAV_L3, __xx__, __xx__,     __xx__, __xx__, NAV_R1, NAV_R2, NAV_R3, NAV_RP, __xx__,
       __xx__, __xx__, __xx__, __xx__, NAV_LS,                                     NAV_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
-                                      NAV_LS, NAV_LE, __xx__,     __xx__, NAV_RE, NAV_RS
+                                     NAV_LS, NAV_LE, KC_LALT,     KC_RALT, NAV_RE, NAV_RS
     ),
 
     [FCT] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, FCT_L7, FCT_L8, FCT_L9, FCT_LA, __xx__,     __xx__, FCT_RA, FCT_R7, FCT_R8, FCT_R9, __xx__, __xx__,
-      __xx__, __xx__, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, __xx__, __xx__,
+     KC_LCTL, __xx__, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, __xx__, KC_RCTL,
       __xx__, FCT_LP, FCT_L1, FCT_L2, FCT_L3, __xx__, __xx__,     __xx__, __xx__, FCT_R1, FCT_R2, FCT_R3, FCT_RP, __xx__,
       __xx__, __xx__, __xx__, __xx__, FCT_LS,                                     FCT_RS, __xx__, __xx__, __xx__, __xx__,
                                               __xx__, __xx__,     __xx__, __xx__,
                                                       __xx__,     __xx__,
-                                      FCT_LS, FCT_LE, __xx__,     __xx__, FCT_RE, FCT_RS
+                                     FCT_LS, FCT_LE, KC_LALT,     KC_RALT, FCT_RE, FCT_RS
     ),
 
 };
