@@ -621,7 +621,7 @@ void wheel( uint8_t wheel_pos ) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
-        energy += 200;
+        energy += 120;
         switch (keycode) {
             case VRSN:
                 SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
