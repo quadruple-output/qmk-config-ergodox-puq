@@ -511,7 +511,7 @@ DEF_COMBO(SYM, 03, R7, R8);
 #define NAV_RA KC_KP_ASTERISK
 // #define NAV_RB MT(MOD_LCTL, KC_KP_SLASH)
 #define NAV_RB KC_KP_SLASH
-#define NAV_RS MT(MOD_LSFT, KC_0)
+#define NAV_RS MT(MOD_LSFT, KC_SPACE)
 #define NAV_RE MT(MOD_LGUI, KC_ENTER)
 
 #define NAVL78 KC_BACKSPACE
@@ -827,7 +827,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, SYM_L7, SYM_L8, SYM_L9, SYM_LA, ______,     ______, SYM_RA, SYM_R7, SYM_R8, SYM_R9, ______, ______,
      KC_LCTL, SYML78, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, ______, KC_RCTL,
       ______, SYM_LP, SYM_L1, SYM_L2, SYM_L3, ______, KC_LCTL,   KC_RCTL, ______, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
-      ______, ______, ______, ______, SYM_LS,                                     SYM_RS, ______, ______, ______, ______,
+      ______, ______, ______, ______, ______,                                     ______, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
                                       SYM_LS, SYM_LE, KC_LALT,   KC_RALT, SYM_RE, SYM_RS
@@ -838,7 +838,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, NAV_L7, NAV_L8, NAV_L9, NAVL89, ______,     ______, NAV_RA, NAV_R7, NAV_R8, NAV_R9, ______, ______,
      KC_LCTL, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, ______, KC_RCTL,
       ______, NAV_LP, NAV_L1, NAV_L2, NAV_L3, ______, KC_LCTL,   KC_RCTL, ______, NAV_R1, NAV_R2, NAV_R3, NAV_RP, ______,
-      ______, ______, ______, ______, NAV_LS,                                     NAV_RS, ______, ______, ______, ______,
+      ______, ______, ______, ______, ______,                                       KC_0, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
                                       NAV_LS, NAV_LE, KC_LALT,   KC_RALT, NAV_RE, NAV_RS
@@ -849,7 +849,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, FCT_L7, FCT_L8, FCT_L9, FCT_LA, ______,     ______, FCT_RA, FCT_R7, FCT_R8, FCT_R9, ______, ______,
      KC_LCTL, ______, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, ______, KC_RCTL,
       ______, FCT_LP, FCT_L1, FCT_L2, FCT_L3, ______, KC_LCTL,   KC_RCTL, ______, FCT_R1, FCT_R2, FCT_R3, FCT_RP, ______,
-      ______, ______, ______, ______, FCT_LS,                                     FCT_RS, ______, ______, ______, ______,
+      ______, ______, ______, ______, ______,                                     ______, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
                                       FCT_LS, FCT_LE, KC_LALT,   KC_RALT, FCT_RE, FCT_RS
