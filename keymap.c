@@ -835,9 +835,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAV] = LAYOUT_ergodox_pretty(
       ______, ______, ______, ______, ______, ______, ______,     ______, ______, ______, ______, ______, ______, ______,
-      ______, ______, NAV_L7, NAV_L8, NAV_L9, NAVL89, ______,     ______, NAV_RA, NAV_R7, NAV_R8, NAV_R9, ______, ______,
-     KC_LCTL, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, ______, KC_RCTL,
-      ______, NAV_LP, NAV_L1, NAV_L2, NAV_L3, ______, KC_LCTL,   KC_RCTL, ______, NAV_R1, NAV_R2, NAV_R3, NAV_RP, ______,
+      ______, ______, NAV_L7, NAV_L8, NAV_L9, NAVL89, ______,     ______, ______, NAV_R7, NAV_R8, NAV_R9, ______, ______,
+     KC_LCTL, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RA, NAV_R4, NAV_R5, NAV_R6, ______, KC_RCTL,
+      ______, NAV_LP, NAV_L1, NAV_L2, NAV_L3, ______, KC_LCTL,   KC_RCTL, NAV_RB, NAV_R1, NAV_R2, NAV_R3, NAV_RP, ______,
       ______, ______, ______, ______, ______,                                       KC_0, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
