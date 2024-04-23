@@ -295,7 +295,7 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
           │   M   │   L   │   C   ├───────┐           ┌───────┤   ,   │   ⎄   │   U   │
           │       │       │       │       │           │       │       │       │       │
           ├───────┼───────┼───────┤   G   │           │   Q   ├───────┼───────┼───────┤
-          │   ●┈┈NAV┈┈◐┈┈SYM┈┈○   │ ⌥ ⎈ ⌘ │           │ ⌥ ⎈ ⌘ │   ●┈┈SYM┈┈◐┈┈NAV┈┈○   │
+          │   ●┈┈NAV┈┈◐┈┈ ⎈ ┈┈○   │ ⌥ ⎈ ⌘ │           │ ⌥ ⎈ ⌘ │   ●┈┈ ⎈ ┈┈◐┈┈NAV┈┈○   │
           │   N   │   R   │   T   ├───────┤           ├───────┤   A   │   E   │   I   │
           │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │       │           │       │   ●┈┈┈┈┈ FCT ┈┈┈┈┈●   │
   ┌───────┼───────┼───────┼───────┤   D   │           │   O   ├───────┼───────┼───────┼───────┐
@@ -347,13 +347,13 @@ Example: PUQ_LP refers to the binding for the left-hand pinky on the "PUQ" layer
 #define PUQL23 DE_J
 #define PUQL45 MO(NAV)
 #define PUQL46 OSL(FCT)
-#define PUQL56 MO(SYM)
+#define PUQL56 KC_LCTL
 // #define PUQL78 DE_COMM
 #define PUQL78 DE_F
 #define PUQL89 KC_DELETE
 #define PUQR12 DE_X
 #define PUQR23 DE_K
-#define PUQR45 PUQL56
+#define PUQR45 KC_RCTL
 #define PUQR46 PUQL46
 #define PUQR56 PUQL45
 #define PUQR78 KC_BACKSPACE
