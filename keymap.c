@@ -816,7 +816,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, ______,     ______, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, ______, ______,
      KC_LCTL, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, KC_RCTL,
       PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, KC_LCTL,   KC_RCTL, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
-      ______, PUQL12, ______, PUQL45, PUQ_LS,                                     PUQ_RS, PUQR56, ______, PUQR23, ______,
+      ______, PUQL12, ______, ______, PUQL45,                                     PUQR56, ______, ______, PUQR23, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
                                       PUQ_LS, PUQ_LE, KC_LALT,   KC_RALT, PUQ_RE, PUQ_RS
