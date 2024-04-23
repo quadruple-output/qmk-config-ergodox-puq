@@ -815,44 +815,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       __xx__, __xx__, __xx__, HR_SCL, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, HR_CLK, __xx__, __xx__, __xx__,
       __xx__, __xx__, PUQ_L7, PUQ_L8, PUQ_L9, PUQ_LA, __xx__,     __xx__, PUQ_RA, PUQ_R7, PUQ_R8, PUQ_R9, __xx__, __xx__,
      KC_LCTL, PUQL78, PUQ_L4, PUQ_L5, PUQ_L6, PUQ_LB,                     PUQ_RB, PUQ_R4, PUQ_R5, PUQ_R6, PUQR89, KC_RCTL,
-      PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, __xx__,     __xx__, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
+      PUQL56, PUQ_LP, PUQ_L1, PUQ_L2, PUQ_L3, PUQL23, KC_LCTL,   KC_RCTL, PUQR12, PUQ_R1, PUQ_R2, PUQ_R3, PUQ_RP, PUQR45,
       __xx__, PUQL12, __xx__, PUQL45, PUQ_LS,                                     PUQ_RS, PUQR56, __xx__, PUQR23, __xx__,
-                                              __xx__, __xx__,     __xx__, __xx__,
+                                             KC_LCTL, __xx__,     __xx__, KC_RCTL,
                                                       __xx__,     __xx__,
-                                     PUQ_LS, PUQ_LE, KC_LALT,     KC_RALT, PUQ_RE, PUQ_RS
+                                      PUQ_LS, PUQ_LE, KC_LALT,   KC_RALT, PUQ_RE, PUQ_RS
     ),
 
     [SYM] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, SYM_L7, SYM_L8, SYM_L9, SYM_LA, __xx__,     __xx__, SYM_RA, SYM_R7, SYM_R8, SYM_R9, __xx__, __xx__,
      KC_LCTL, SYML78, SYM_L4, SYM_L5, SYM_L6, SYM_LB,                     SYM_RB, SYM_R4, SYM_R5, SYM_R6, __xx__, KC_RCTL,
-      __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, __xx__,     __xx__, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
+      __xx__, SYM_LP, SYM_L1, SYM_L2, SYM_L3, __xx__, KC_LCTL,   KC_RCTL, __xx__, SYM_R1, SYM_R2, SYM_R3, SYM_RP, DE_AT,
       __xx__, __xx__, __xx__, __xx__, SYM_LS,                                     SYM_RS, __xx__, __xx__, __xx__, __xx__,
-                                              __xx__, __xx__,     __xx__, __xx__,
+                                             KC_LCTL, __xx__,     __xx__, KC_RCTL,
                                                       __xx__,     __xx__,
-                                     SYM_LS, SYM_LE, KC_LALT,     KC_RALT, SYM_RE, SYM_RS
+                                      SYM_LS, SYM_LE, KC_LALT,   KC_RALT, SYM_RE, SYM_RS
     ),
 
     [NAV] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, NAV_L7, NAV_L8, NAV_L9, NAVL89, __xx__,     __xx__, NAV_RA, NAV_R7, NAV_R8, NAV_R9, __xx__, __xx__,
      KC_LCTL, NAVR78, NAV_L4, NAV_L5, NAV_L6, NAV_LB,                     NAV_RB, NAV_R4, NAV_R5, NAV_R6, __xx__, KC_RCTL,
-      __xx__, NAV_LP, NAV_L1, NAV_L2, NAV_L3, __xx__, __xx__,     __xx__, __xx__, NAV_R1, NAV_R2, NAV_R3, NAV_RP, __xx__,
+      __xx__, NAV_LP, NAV_L1, NAV_L2, NAV_L3, __xx__, KC_LCTL,   KC_RCTL, __xx__, NAV_R1, NAV_R2, NAV_R3, NAV_RP, __xx__,
       __xx__, __xx__, __xx__, __xx__, NAV_LS,                                     NAV_RS, __xx__, __xx__, __xx__, __xx__,
-                                              __xx__, __xx__,     __xx__, __xx__,
+                                             KC_LCTL, __xx__,     __xx__, KC_RCTL,
                                                       __xx__,     __xx__,
-                                     NAV_LS, NAV_LE, KC_LALT,     KC_RALT, NAV_RE, NAV_RS
+                                      NAV_LS, NAV_LE, KC_LALT,   KC_RALT, NAV_RE, NAV_RS
     ),
 
     [FCT] = LAYOUT_ergodox_pretty(
       __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,     __xx__, __xx__, __xx__, __xx__, __xx__, __xx__, __xx__,
       __xx__, __xx__, FCT_L7, FCT_L8, FCT_L9, FCT_LA, __xx__,     __xx__, FCT_RA, FCT_R7, FCT_R8, FCT_R9, __xx__, __xx__,
      KC_LCTL, __xx__, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, __xx__, KC_RCTL,
-      __xx__, FCT_LP, FCT_L1, FCT_L2, FCT_L3, __xx__, __xx__,     __xx__, __xx__, FCT_R1, FCT_R2, FCT_R3, FCT_RP, __xx__,
+      __xx__, FCT_LP, FCT_L1, FCT_L2, FCT_L3, __xx__, KC_LCTL,   KC_RCTL, __xx__, FCT_R1, FCT_R2, FCT_R3, FCT_RP, __xx__,
       __xx__, __xx__, __xx__, __xx__, FCT_LS,                                     FCT_RS, __xx__, __xx__, __xx__, __xx__,
-                                              __xx__, __xx__,     __xx__, __xx__,
+                                             KC_LCTL, __xx__,     __xx__, KC_RCTL,
                                                       __xx__,     __xx__,
-                                     FCT_LS, FCT_LE, KC_LALT,     KC_RALT, FCT_RE, FCT_RS
+                                      FCT_LS, FCT_LE, KC_LALT,   KC_RALT, FCT_RE, FCT_RS
     ),
 
 };
