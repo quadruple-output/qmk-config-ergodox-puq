@@ -848,7 +848,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, ______, ______, ______, ______, ______,     ______, ______, ______, ______, ______, ______, ______,
       ______, ______, FCT_L7, FCT_L8, FCT_L9, FCT_LA, ______,     ______, FCT_RA, FCT_R7, FCT_R8, FCT_R9, ______, ______,
      KC_LCTL, ______, FCT_L4, FCT_L5, FCT_L6, FCT_LB,                     FCT_RB, FCT_R4, FCT_R5, FCT_R6, ______, KC_RCTL,
-      ______, FCT_LP, FCT_L1, FCT_L2, FCT_L3, ______, KC_LCTL,   KC_RCTL, ______, FCT_R1, FCT_R2, FCT_R3, FCT_RP, ______,
+      ______, FCT_LP, FCT_L1, FCT_L2, FCT_L3, KC_F12, KC_LCTL,   KC_RCTL, ______, FCT_R1, FCT_R2, FCT_R3, FCT_RP, ______,
       ______, ______, ______, ______, ______,                                     ______, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
