@@ -584,7 +584,7 @@ DEF_COMBO(NAV, 07, R8, R9);
 #define FCT_R7 KC_AUDIO_VOL_DOWN
 #define FCT_R8 KC_AUDIO_MUTE
 #define FCT_R9 KC_AUDIO_VOL_UP
-#define FCT_RA C(A(KC_LGUI))
+#define FCT_RA C(LALT(KC_LGUI))
 // #define FCT_RB KC_LCTL
 #define FCT_RB XXXXXXX
 #define FCT_RS MT(MOD_LSFT, KC_MS_BTN2)
@@ -733,8 +733,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 };
 
 // Homerow-bindings for scrolling and clicking:
-#define HR_SCL C(A(G(DE_G)))
-#define HR_CLK C(A(G(DE_Q)))
+#define HR_SCL C(LALT(G(DE_G)))
+#define HR_CLK C(LALT(G(DE_Q)))
 
 // Key Overrides:
 const key_override_t shift_hr_clk = ko_make_with_layers(
@@ -810,6 +810,12 @@ const key_override_t **key_overrides = (const key_override_t *[]){
 
 // Keymaps (not much info here):
 // clang-format off
+//
+// NOTE on modifiers: All key bindings use Left-Alt, but tha ALT-Key is bound to Right-Alt.
+// This makes it possible to distinguish between special symbols that are created by using the ALT
+// key (like '~' which is ALT-n), and the ALT key itself. Neovide can be configured to treat LALT
+// and RALT differently with that regard.
+//
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [PUQ] = LAYOUT_ergodox_pretty(
       ______, ______, ______, HR_SCL, ______, ______, ______,     ______, ______, ______, HR_CLK, ______, ______, ______,
@@ -819,7 +825,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, PUQL12, ______, ______, LT(NAV,KC_SPC),                     LT(NAV,KC_SPC), ______, ______, PUQR23, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
-                                      PUQ_LS, PUQ_LE, KC_LALT,   KC_RALT, PUQ_RE, PUQ_RS
+                                      PUQ_LS, PUQ_LE, KC_RALT,   KC_RALT, PUQ_RE, PUQ_RS
     ),
 
     [SYM] = LAYOUT_ergodox_pretty(
@@ -830,7 +836,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, ______, ______, ______,                                     ______, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
-                                      SYM_LS, SYM_LE, KC_LALT,   KC_RALT, SYM_RE, SYM_RS
+                                      SYM_LS, SYM_LE, KC_RALT,   KC_RALT, SYM_RE, SYM_RS
     ),
 
     [NAV] = LAYOUT_ergodox_pretty(
@@ -841,7 +847,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, ______, ______, ______,                                       KC_0, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
-                                      NAV_LS, NAV_LE, KC_LALT,   KC_RALT, NAV_RE, NAV_RS
+                                      NAV_LS, NAV_LE, KC_RALT,   KC_RALT, NAV_RE, NAV_RS
     ),
 
     [FCT] = LAYOUT_ergodox_pretty(
@@ -852,7 +858,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ______, ______, ______, ______, ______,                                     ______, ______, ______, ______, ______,
                                              KC_LCTL, ______,     ______, KC_RCTL,
                                                       ______,     ______,
-                                      FCT_LS, FCT_LE, KC_LALT,   KC_RALT, FCT_RE, FCT_RS
+                                      FCT_LS, FCT_LE, KC_RALT,   KC_RALT, FCT_RE, FCT_RS
     ),
 
 };
